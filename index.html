@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type='text/javascript' src='/bower_components/knockout/dist/knockout.js'></script>
+        <title>Title of the document</title>
+    </head>
+    <body>
+        <h1> The content of the document......</h1>
+        <div>
+            <img data-bind="attr: {src: photoURL}" />
+        </div>
+        <span data-bind="text: shortDesc"></span>
+        <div data-bind="text: description"></div>
+        <span data-bind="text: formatCurrency(salePrice)"></span>
+        <br />
+        <input data-bind="value: likes"></input>
+        <span data-bind="text: likes"></span>
+        <script>
+            var path = '/photos/';
+            var data = {
+                "Id": 1001,
+                "SalePrice": 10485.00,
+                "ShortDesc": "Taylor ACE",
+                "Description": "Taylor ACE made in INDIA",
+                "Likes": "John Doe"
+            };
+            var viewmodel = {
+                name: 'guitar3.jpg',
+                likes: ko.observable(data.Likes),
+                shortDesc: ko.observable(data.ShortDesc),
+                salePrice: ko.observable(data.SalePrice),
+                description: ko.observable(data.Description),
+                formatCurrency: function(value) {
+                    return "$" + value().toFixed(2);
+                }
+            };
+
+            viewmodel.photoURL =  ko.computed(function(){
+                    return path + this.name;
+                }, viewmodel);
+
+            // Bind the ViewModel to the View using knockout
+            ko.applyBindings(viewmodel);
+        </script>
+    </body>
+</html>
