@@ -13,7 +13,7 @@ Demo Typescript Knokoutjs Client App
 ```   
         npm install @types/knockout
 ````
-   # To Compile and Run
+#### To Compile and Run
    - install npm module typescript globally
    - install npm module http-server globally
 ```
