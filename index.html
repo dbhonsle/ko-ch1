@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type='text/javascript' src='/bower_components/knockout/dist/knockout.js'></script>
         <title>Title of the document</title>
     </head>
     <body>
@@ -10,37 +9,16 @@
             <img data-bind="attr: {src: photoURL}" />
         </div>
         <span data-bind="text: shortDesc"></span>
+        <span data-bind="text: formatCurrency"></span>
         <div data-bind="text: description"></div>
-        <span data-bind="text: formatCurrency(salePrice)"></span>
         <br />
+        <span>Liked By</span>
         <input data-bind="value: likes"></input>
         <span data-bind="text: likes"></span>
+        <script src="/bower_components/requirejs/require.js"></script>
+        <script src="/built/require-config.js"></script>
         <script>
-            var path = '/photos/';
-            var data = {
-                "Id": 1001,
-                "SalePrice": 10485.00,
-                "ShortDesc": "Taylor ACE",
-                "Description": "Taylor ACE made in INDIA",
-                "Likes": "John Doe"
-            };
-            var viewmodel = {
-                name: 'guitar3.jpg',
-                likes: ko.observable(data.Likes),
-                shortDesc: ko.observable(data.ShortDesc),
-                salePrice: ko.observable(data.SalePrice),
-                description: ko.observable(data.Description),
-                formatCurrency: function(value) {
-                    return "$" + value().toFixed(2);
-                }
-            };
-
-            viewmodel.photoURL =  ko.computed(function(){
-                    return path + this.name;
-                }, viewmodel);
-
-            // Bind the ViewModel to the View using knockout
-            ko.applyBindings(viewmodel);
+            require(["built/tunes"]);
         </script>
     </body>
 </html>
