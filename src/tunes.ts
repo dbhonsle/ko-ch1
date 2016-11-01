@@ -26,7 +26,7 @@ class TunesViewModel {
         this.description = ko.observable(data.Description);
         this.formatCurrency = ko.computed({
             read: () => {
-                return "$" + data.SalePrice.toFixed(2);
+                return "Rs. " + data.SalePrice.toFixed(2);
             }
         });
         this.photoURL = ko.computed({
@@ -42,8 +42,8 @@ class TunesViewModel {
 ko.applyBindings(new TunesViewModel({
         "Id": 1001,
         "fname": "guitar3.jpg",
-        "SalePrice": 12485.00,
-        "ShortDesc": "Taylor ACE",
-        "Description": "Taylor ACE made in Germany",
+        "SalePrice": 35909.00,
+        "ShortDesc": "Fender Duo-Sonic",
+        "Description": "Fender Duo-Sonic Electric Guitar with Maple Fingerboard",
         "Likes": "Nagendra Prahalad"
     }));
