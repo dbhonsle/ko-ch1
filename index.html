@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Tunes and More</title>
-    </head>
-    <body>
-        <h1>Tunes Store</h1>
+
+<head>
+	<title>Tunes and More</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+	<style>
+		.mdl-grid {
+			max-width: 600px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="mdl-layout mdl-js-layout mdl-color--grey-100">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+				<!-- Title -->
+				<span class="mdl-layout-title">Tunes Store</span>
+			</div>
+		</header>
+		<main class="mdl-layout__content">
+			<!--
         <div>
             <img data-bind="attr: {src: photoURL}" />
         </div>
@@ -15,10 +33,42 @@
         <span>Liked By</span>
         <input data-bind="value: likes"></input>
         <span data-bind="text: likes"></span>
-        <script src="/bower_components/requirejs/require.js"></script>
-        <script src="/built/require-config.js"></script>
-        <script>
+        -->
+
+			<div class="mdl-grid">
+
+				<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+					<thead>
+						<tr>
+							<th>Photo</th>
+							<th class="mdl-data-table__cell--non-numeric">Short Description</th>
+							<th>Unit Price</th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach: ttvm.MytunesList">
+						<tr>
+							<td>
+								<img data-bind="attr: {src: photoURL}" />
+							</td>
+							<td class="mdl-data-table__cell--non-numeric" data-bind="text: shortDesc"></td>
+							<td data-bind="text: salePrice"></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+
+			</div>
+
+
+		</main>
+	</div>
+
+	<script src="/bower_components/requirejs/require.js"></script>
+	<script src="/built/require-config.js"></script>
+	<script>
             require(["built/tunes"]);
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>

@@ -1,0 +1,22 @@
+{
+  "name": "ko-ch1",
+  "homepage": "https://github.com/dbhonsle/ko-ch1",
+  "description": "Knockout Demo",
+  "main": "",
+  "authors": [
+    "Deepak S Bhonsle"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "^3.4.0",
+    "requirejs": "^2.3.2"
+  }
+}

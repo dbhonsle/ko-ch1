@@ -8,6 +8,7 @@
     },
     "files": [
         "./src/require-config.ts",
-        "./src/tunes.ts"
+        "./src/tunes.ts",
+        "./src/tunesmodel.ts"
     ]
 }
