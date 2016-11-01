@@ -6,12 +6,11 @@ Demo Typescript Knokoutjs Client App
    - amd loader
    - bower for Client Dependency management
 ```
-        bower i requirejs
-        bower i knockout
+        bower i
 ```
    - npm for Typescript typedef Dependency management
 ```   
-        npm install @types/knockout
+        npm i
 ````
 #### To Compile and Run
    - install npm module typescript globally
