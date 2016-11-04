@@ -8,7 +8,26 @@
 	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 	<style>
 		.mdl-grid {
-			max-width: 600px;
+	    max-width: 900px;
+        }
+
+		.mdl-card__media {
+			margin: auto;
+		}
+		
+		.mdl-card__media > img {
+			max-width: 100%;
+		}
+		
+		.mdl-card__actions {
+			display: flex;
+			box-sizing: border-box;
+			align-items: center;
+		}
+		
+		.mdl-card__actions > .mdl-button--icon {
+			margin-right: 3px;
+			margin-left: 3px;
 		}
 	</style>
 </head>
@@ -22,7 +41,8 @@
 			</div>
 		</header>
 		<main class="mdl-layout__content">
-			<!--
+
+		<!--
         <div>
             <img data-bind="attr: {src: photoURL}" />
         </div>
@@ -35,9 +55,35 @@
         <span data-bind="text: likes"></span>
         -->
 
-			<div class="mdl-grid">
+			<div data-bind="foreach: ttvm.MytunesList" class="mdl-grid">
 
-				<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+				
+					<div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+						<figure class="mdl-card__media">
+							<img data-bind="attr: {src: photoURL}" />
+						</figure>
+						<div class="mdl-card__supporting-text">
+							<p data-bind="text: description"></p>
+						</div>
+						<div class="mdl-card__title">
+							<h1 data-bind="text: shortDesc" class="mdl-card__title-text"></h1>
+						</div>
+						<div class="mdl-card__title">
+							<h1 class="mdl-card__title-text">INR -</h1>
+							<h1 data-bind="text: salePrice" class="mdl-card__title-text"></h1>
+						</div>
+						<div class="mdl-card__actions mdl-card--border">
+							<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read More</a>
+							<div class="mdl-layout-spacer"></div>
+							<button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+							<button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+						</div>
+
+					</div>
+				
+
+				<!--
+            	<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
 					<thead>
 						<tr>
 							<th>Photo</th>
@@ -55,7 +101,7 @@
 						</tr>
 					</tbody>
 				</table>
-
+            -->
 
 
 			</div>

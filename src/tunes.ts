@@ -88,12 +88,12 @@ class MasterViewModel {
 // Bind the ViewModel to the View using knockout
 /*
 ko.applyBindings(new TunesViewModel({
-        "Id": 1001,
-        "fname": "guitar3.jpg",
-        "SalePrice": 35909.00,
-        "ShortDesc": "Fender Duo-Sonic",
-        "Description": "Fender Duo-Sonic Electric Guitar with Maple Fingerboard",
-        "Likes": "Nagendra Prahalad"
+         Id: 1001,
+         fname: "guitar3.jpg",
+         SalePrice: 35909.00,
+         ShortDesc: "Fender Duo-Sonic",
+         Description: "Fender Duo-Sonic Electric Guitar with Maple Fingerboard",
+         Likes: "Nagendra Prahalad"
     }));
 */
 // ko.applyBindings(new TunesViewModel(tm.tunesListModel[3]));
