@@ -4,16 +4,22 @@
 <head>
 	<title>Tunes and More</title>
 	<link rel="icon" type="image/ico" href="/favicon.ico">
+
+	<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+	<script src="bower_components/qrjs/qr.js"></script>
+	<script src="bower_components/qr-code/src/qr-code.js"></script>
+
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
 	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 	<style>
 		.mdl-grid {
-	    max-width: 900px;
-        }
-
+			max-width: 900px;
+		}
+		
 		.mdl-card__media {
-			margin: auto;
+			background-color: rgb(255, 255, 255);
+			text-align: center;
 		}
 		
 		.mdl-card__media > img {
@@ -43,7 +49,7 @@
 		</header>
 		<main class="mdl-layout__content">
 
-		<!--
+			<!--
         <div>
             <img data-bind="attr: {src: photoURL}" />
         </div>
@@ -58,30 +64,35 @@
 
 			<div data-bind="foreach: ttvm.MytunesList" class="mdl-grid">
 
-				
-					<div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
-						<figure class="mdl-card__media">
-							<img data-bind="attr: {src: photoURL}" />
-						</figure>
-						<div class="mdl-card__supporting-text">
-							<p data-bind="text: description"></p>
-						</div>
-						<div class="mdl-card__title">
-							<h1 data-bind="text: shortDesc" class="mdl-card__title-text"></h1>
-						</div>
-						<div class="mdl-card__title">
-							<h1 class="mdl-card__title-text">INR -</h1>
-							<h1 data-bind="text: salePrice" class="mdl-card__title-text"></h1>
-						</div>
-						<div class="mdl-card__actions mdl-card--border">
-							<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read More</a>
-							<div class="mdl-layout-spacer"></div>
-							<button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
-							<button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
-						</div>
 
+				<div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+					<figure class="mdl-card__media">
+						<img data-bind="attr: {src: photoURL}" />
+					</figure>
+					<div class="mdl-card__supporting-text">
+						<p data-bind="text: description"></p>
 					</div>
-				
+					<div class="mdl-card__title">
+						<h1 data-bind="text: shortDesc" class="mdl-card__title-text"></h1>
+					</div>
+					<div class="mdl-card__title">
+						<h1 class="mdl-card__title-text">INR -</h1>
+						<h1 data-bind="text: salePrice" class="mdl-card__title-text"></h1>
+					</div>
+
+					<div class="mdl-card__media">
+						<qr-code data="hello world!"></qr-code>
+					</div>
+
+					<div class="mdl-card__actions mdl-card--border">
+						<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read More</a>
+						<div class="mdl-layout-spacer"></div>
+						<button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+						<button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+					</div>
+
+				</div>
+
 
 				<!--
             	<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
@@ -106,8 +117,6 @@
 
 
 			</div>
-
-
 		</main>
 	</div>
 
